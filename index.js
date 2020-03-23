@@ -4,6 +4,8 @@ const fetch = require('node-fetch');
 
 require('dotenv').config();
 
+client.commands = new Collection();
+
 const playerURL = 'https://gameinfo.albiononline.com/api/gameinfo/players/';
 const searchURL = 'http://gameinfo.albiononline.com/api/gameinfo/search?q=';
 const guildURL = 'https://gameinfo.albiononline.com/api/gameinfo/guilds/';
@@ -25,6 +27,12 @@ client.on('ready', () => {
 });
 
 client.on('message', async msg => {
+  // If author is bot, return
+  if (msg.author.bot) return;
+  // If message isn't in a server, return
+  if (!msg.guild) return;
+  // If message doesn't start with prefix, return
+  if (!msg.content.startsWith(process.env.PREFIX)) return;
   if (msg.content.startsWith('~player')) {
     const playerName = msg.content.substring(8);
     const res = await fetch(searchURL + playerName);
