@@ -4,6 +4,7 @@
   "description": "Discord bot to manage Albion Online guild.",
   "main": "index.js",
   "scripts": {
+    "start": "node",
     "dev": "nodemon"
   },
   "author": "Qusai Fares <qusaifares@gmail.com> (https://qusaifares.com/)",

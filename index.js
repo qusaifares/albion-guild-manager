@@ -6,6 +6,7 @@ require('dotenv').config();
 
 const playerURL = 'https://gameinfo.albiononline.com/api/gameinfo/players/';
 const searchURL = 'http://gameinfo.albiononline.com/api/gameinfo/search?q=';
+const guildURL = 'https://gameinfo.albiononline.com/api/gameinfo/guilds/';
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
