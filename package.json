@@ -10,8 +10,10 @@
   "author": "Qusai Fares <qusaifares@gmail.com> (https://qusaifares.com/)",
   "license": "ISC",
   "dependencies": {
+    "ascii-table": "0.0.9",
     "discord.js": "^12.0.2",
     "dotenv": "^8.2.0",
+    "file-system": "^2.2.2",
     "node-fetch": "^2.6.0"
   },
   "devDependencies": {
