@@ -28,6 +28,8 @@ module.exports = {
     };
     if (playerData.GuildName === 'eGirl Collectors') {
       body.isGuildMember = true;
+      const memberRole = message.guild.roles.find('name', 'Member');
+      msg.member.roles.add(memberRole);
       msg.channel.send('✅ eGirl Collectors guild member');
     }
 
