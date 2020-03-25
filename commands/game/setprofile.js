@@ -28,6 +28,7 @@ module.exports = {
     };
     if (playerData.GuildName === 'eGirl Collectors') {
       body.isGuildMember = true;
+      msg.channel.send('✅ eGirl Collectors guild member');
     }
 
     const memberRes = await fetch(
