@@ -16,7 +16,7 @@ module.exports = {
       playerName: '',
       isGuildMember: false
     };
-
+    // add guest role and remove member role
     const memberRole = '691474453934375012';
     const guestRole = '691474454454206564';
     msg.member.roles.remove(
@@ -24,7 +24,6 @@ module.exports = {
       'Player unlinked their Albion Online account.'
     );
     msg.member.roles.add(guestRole);
-    msg.channel.send('Removed Member Role');
 
     const memberRes = await fetch(
       `${process.env.SERVER_URL}/api/members/${msg.author.id}/edit`,

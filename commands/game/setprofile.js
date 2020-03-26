@@ -16,7 +16,7 @@ module.exports = {
 
     const searchRes = await fetch(`${searchURL}${args[0]}`);
     const searchData = await searchRes.json();
-
+    // if no player found
     if (!searchData.players.length) {
       msg.channel.send('Player not found');
       return;
@@ -26,11 +26,12 @@ module.exports = {
       playerId: playerData.Id,
       playerName: playerData.Name
     };
+    // if player is in the eGirl Collectors guild
     if (playerData.GuildName === 'eGirl Collectors') {
       body.isGuildMember = true;
       const memberRole = '691474453934375012';
       const guestRole = '691474454454206564';
-
+      // add member role and remove guest role
       msg.member.roles.add(
         memberRole,
         'Player is in the eGirl Collectors guild in Albion Online.'
