@@ -33,7 +33,7 @@ module.exports = {
 
       msg.member.roles.add(
         memberRole,
-        'Player unlinked their Albion Online account.'
+        'Player is in the eGirl Collectors guild in Albion Online.'
       );
       msg.member.roles.remove(guestRole);
 
