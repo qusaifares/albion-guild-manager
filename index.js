@@ -1,7 +1,5 @@
 const { Client, RichEmbed, Collection } = require('discord.js');
 const client = new Client();
-const fetch = require('node-fetch');
-const watchedWords = require('./watched-words.json');
 const saveBadMessage = require('./functions/saveBadMessage');
 const addMember = require('./functions/addMember');
 
@@ -9,6 +7,7 @@ client.commands = new Collection();
 client.aliases = new Collection();
 
 require('dotenv').config();
+const watchedWords = process.env.WATCHED_WORDS.split(',');
 
 const handlers = ['command'];
 
@@ -39,11 +38,12 @@ client.on('guildMemberAdd', async member => {
 });
 
 client.on('message', async msg => {
-  // check if message should be watched and save if yes
+  // Check if message should be watched and save if yes
   saveBadMessage(msg, watchedWords);
   if (msg.content === `${process.env.PREFIX}addme`) {
     addMember(msg.author);
   }
+
   // If author is bot, return
   if (msg.author.bot) return;
   // If message isn't in a server, return

@@ -1,11 +1,13 @@
 const fetch = require('node-fetch');
 const saveBadMessage = (msg, watchedWords) => {
   let words = [];
+  // list the watched words that were use
   for (word of watchedWords) {
     if (msg.content.toLowerCase().includes(word)) {
       words.push(word);
     }
   }
+  // if 1 or more words were used, save message
   if (words.length) {
     const msgBody = {
       _id: msg.id,

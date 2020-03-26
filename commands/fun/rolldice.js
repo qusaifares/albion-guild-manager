@@ -1,5 +1,3 @@
-const fetch = require('node-fetch');
-const playerURL = 'https://gameinfo.albiononline.com/api/gameinfo/players/';
 module.exports = {
   name: 'rolldice',
   category: 'fun',
