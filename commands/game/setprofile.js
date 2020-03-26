@@ -29,7 +29,14 @@ module.exports = {
     if (playerData.GuildName === 'eGirl Collectors') {
       body.isGuildMember = true;
       const memberRole = '691474453934375012';
-      msg.member.roles.add(memberRole);
+      const guestRole = '691474454454206564';
+
+      msg.member.roles.add(
+        memberRole,
+        'Player unlinked their Albion Online account.'
+      );
+      msg.member.roles.remove(guestRole);
+
       msg.channel.send('✅ eGirl Collectors guild member');
     }
 
