@@ -28,7 +28,7 @@ module.exports = {
     };
     if (playerData.GuildName === 'eGirl Collectors') {
       body.isGuildMember = true;
-      const memberRole = msg.guild.roles.fetch('691474454454206564', 'true');
+      const memberRole = '691474453934375012';
       msg.member.roles.add(memberRole);
       msg.channel.send('✅ eGirl Collectors guild member');
     }
