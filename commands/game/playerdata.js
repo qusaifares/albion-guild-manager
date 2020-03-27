@@ -26,7 +26,7 @@ module.exports = {
       // if member doesn't have player id
       if (!member.playerId) {
         msg.channel.send(
-          `Please link your Albion profile by typing \`${process.env.PREFIX}setprofile <username>\``
+          `Please link your Albion profile by typing \`${process.env.PREFIX}${this.name} <username>\``
         );
         return;
       }

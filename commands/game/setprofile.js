@@ -9,7 +9,7 @@ module.exports = {
     // if invalid
     if (args.length !== 1) {
       msg.channel.send(
-        `Please include one username. \`${process.env.PREFIX}setprofile <username>\``
+        `Please include one username. \`${process.env.PREFIX}${this.name} <username>\``
       );
       return;
     }
