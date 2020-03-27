@@ -2,7 +2,7 @@ const fetch = require('node-fetch');
 const { MessageEmbed } = require('discord.js');
 const playerURL = 'https://gameinfo.albiononline.com/api/gameinfo/players/';
 module.exports = {
-  name: 'playerdata',
+  name: 'player',
   category: 'game',
   description: 'Returns Albion Online player information.',
   run: async (client, msg, args) => {
@@ -10,7 +10,9 @@ module.exports = {
       !msg.mentions.users.array().length ||
       msg.mentions.users.array().length > 1
     ) {
-      msg.channel.send('Please choose one player');
+      msg.channel.send(
+        `Please mention the player \`${process.env.PREFIX}player @MentionPlayer\``
+      );
       return;
     }
     const mention = msg.mentions.users.first(1)[0];
