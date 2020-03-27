@@ -7,9 +7,10 @@ const addMember = async member => {
   const memberCheckData = await memberCheckRes.json();
   if (memberCheckData) return;
   // create member
+  console.log(member);
   const memberBody = {
     _id: member.id,
-    tagOnJoin: member.tag
+    tagOnJoin: member.user.tag
   };
   fetch(`${process.env.SERVER_URL}/api/members/new`, {
     method: 'POST',
