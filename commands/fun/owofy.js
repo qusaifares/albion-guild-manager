@@ -9,6 +9,6 @@ module.exports = {
         `Include a sentence in the command \`${process.env.PREFIX}owofy <sentence here>\``
       );
     const owoMsg = owofy(args.join(' '));
-    msg.channel.send(owoMsg);
+    if (owoMsg) msg.channel.send(owoMsg);
   }
 };
