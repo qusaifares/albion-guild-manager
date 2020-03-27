@@ -6,7 +6,7 @@ module.exports = {
   run: async (client, msg, args) => {
     if (args.length) {
       msg.channel.send(
-        `Invalid syntax. Simply type in \`${process.env.PREFIX}${this.name}\` to unlink your Albion Online profile.`
+        `Invalid syntax. Simply type in \`${process.env.PREFIX}removeprofile\` to unlink your Albion Online profile.`
       );
       return;
     }
